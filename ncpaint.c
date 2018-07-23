@@ -29,7 +29,7 @@ struct State {
 
 void state_init(struct State* s, MEVENT* mevent);
 
-int init(struct State*);
+int init(void);
 void loop(struct State*);
 int main(void);
 int quit(struct State*);
@@ -161,7 +161,7 @@ int main(void)
 	MEVENT mevent;
 	struct State state;
 	state_init(&state, &mevent);
-	init(&state);
+	init();
 
 	while(state.is_running)
 		loop(&state);
